@@ -318,19 +318,19 @@ if test "$enable_libxml2" != "yes"; then
 			expat=no
 			;;
 		yes)
-			AC_CHECK_FUNCS(XML_SetDoctypeDeclHandler)
-			case "$ac_cv_func_XML_SetDoctypeDeclHandler" in
-			yes)
+			#AC_CHECK_FUNCS(XML_SetDoctypeDeclHandler)
+			#case "$ac_cv_func_XML_SetDoctypeDeclHandler" in
+			#yes)
 				HAVE_EXPAT=1
 				AC_SUBST(HAVE_EXPAT)
 				AC_DEFINE_UNQUOTED(HAVE_EXPAT,$HAVE_EXPAT,
 				[Found a useable expat library])
 				;;
-			*)
-				expat=no
-				;;
-			esac
-			;;
+			#*)
+			#	expat=no
+			#	;;
+			#esac
+			#;;
 		esac
 		CPPFLAGS="$expatsaved_CPPFLAGS"
 		LIBS="$expatsaved_LIBS"
