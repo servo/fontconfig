@@ -79,8 +79,8 @@ FcInitLoadConfig (void)
 		 FC_CACHEDIR);
 	fprintf (stderr,
 		 "Fontconfig warning: adding <cachedir>~/.fontconfig</cachedir>\n");
-	if (!FcConfigAddCacheDir (config, (FcChar8 *) FC_CACHEDIR) ||
-	    !FcConfigAddCacheDir (config, (FcChar8 *) "~/.fontconfig"))
+	if (!FcConfigAddCacheDir (config, (FcChar8 *) FC_CACHEDIR) /*||
+	    !FcConfigAddCacheDir (config, (FcChar8 *) "~/.fontconfig")*/)
 	{
 	    fprintf (stderr,
 		     "Fontconfig error: out of memory");
