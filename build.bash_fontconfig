@@ -1,6 +1,6 @@
 #!/bin/bash
 
 export FREETYPE_CFLAGS=-I/home/aydin.kim/servo/webconv/servo/src/libfreetype2/include
-export FREETYPE_LIBS=-L/home/aydin.kim/servo/webconv/servo1/build/arm-unknown-android/src/libfreetype2/.libs
+export FREETYPE_LIBS=-L/home/aydin.kim/servo/webconv/servo1/build/arm-linux-androideabi/src/libfreetype2/.libs
 
 sh ./autogen.sh --with-arch=arm --host=arm-linux-androideabi --with-expat-includes=/home/aydin.kim/servo/libs_android/expat/expat/lib --with-expat-lib=/home/aydin.kim/servo/libs_android/expat/expat/.libs
