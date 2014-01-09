@@ -83,3 +83,4 @@ fc-query/fc-query.1
 fc-scan/fc-scan
 fc-scan/fc-scan.1
 src/fontconfig.def
+test-driver
