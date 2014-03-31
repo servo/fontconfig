@@ -85,3 +85,4 @@ fc-scan/fc-scan
 fc-scan/fc-scan.1
 src/fontconfig.def
 test-driver
+/compile
