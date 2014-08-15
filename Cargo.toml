@@ -1,0 +1,12 @@
+[package]
+
+name = "fontconfig-sys"
+version = "2.11.0"
+authors = ["Keith Packard <keithp@keithp.com>", "Patrick Lam <plam@mit.edu>"]
+
+build = "./cargo_build.sh"
+
+[lib]
+
+name = "fontconfig-sys"
+path = "lib.rs"
