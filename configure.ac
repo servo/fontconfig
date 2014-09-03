@@ -386,11 +386,11 @@ if test "$enable_libxml2" != "yes"; then
 *** expat is required. or try to use --enable-libxml2])
 		fi
 	fi
-	AC_CHECK_FUNCS(XML_SetDoctypeDeclHandler)
-	if test "$ac_cv_func_XML_SetDoctypeDeclHandler" = "no"; then
-		AC_MSG_ERROR([
-*** expat is required. or try to use --enable-libxml2])
-	fi
+#	AC_CHECK_FUNCS(XML_SetDoctypeDeclHandler)
+#	if test "$ac_cv_func_XML_SetDoctypeDeclHandler" = "no"; then
+#		AC_MSG_ERROR([
+#*** expat is required. or try to use --enable-libxml2])
+#	fi
 	CPPFLAGS="$expatsaved_CPPFLAGS"
 	LIBS="$expatsaved_LIBS"
 
