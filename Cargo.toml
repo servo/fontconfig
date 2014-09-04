@@ -4,9 +4,16 @@ name = "fontconfig-sys"
 version = "2.11.0"
 authors = ["Keith Packard <keithp@keithp.com>", "Patrick Lam <plam@mit.edu>"]
 
-build = "./cargo_build.sh"
+build = "make -f makefile.cargo"
 
 [lib]
 
 name = "fontconfig-sys"
 path = "lib.rs"
+
+[dependencies.expat-sys]
+git = "https://github.com/servo/libexpat"
+
+[dependencies.freetype-sys]
+git = "https://github.com/servo/libfreetype2"
+
