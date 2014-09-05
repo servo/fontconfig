@@ -32,17 +32,32 @@ $(OUT_DIR)/libfontconfig.a: $(OUT_DIR)/Makefile
 EXPAT_OUTDIR = $(shell find $(OUT_DIR)/.. -name 'expat-sys-*' -type d)
 FREETYPE_OUTDIR = $(shell find $(OUT_DIR)/.. -name 'freetype-sys-*' -type d)
 
+ifeq (androideabi,$(findstring androideabi,$(TARGET)))
+
+EXPAT_FLAGS = --with-expat-includes=$(EXPAT_OUTDIR)/include \
+              --with-expat-lib=$(EXPAT_OUTDIR)
+FREETYPE_CFLAGS = "-I$(FREETYPE_OUTDIR)/include"
+FREETYPE_LIBS = "-L$(FREETYPE_OUTDIR) -lfreetype"
+
+else
+
+EXPAT_FLAGS =
+FREETYPE_CFLAGS =
+FREETYPE_LIBS =
+
+endif
+
 $(OUT_DIR)/Makefile:
 	cd $(OUT_DIR) && \
 		CC=$(CC) \
 		AR=$(AR) \
-		FREETYPE_CFLAGS="-I$(FREETYPE_OUTDIR)/include" \
-		FREETYPE_LIBS="-L$(FREETYPE_OUTDIR) -lfreetype" \
+		FREETYPE_CFLAGS="$(FREETYPE_CFLAGS)" \
+		FREETYPE_LIBS="$(FREETYPE_LIBS)" \
+		CFLAGS="-fPIC" \
 		$(SRC_DIR)/configure \
 		--disable-docs \
 		--disable-shared \
-		--with-expat-includes=$(EXPAT_OUTDIR)/include \
-		--with-expat-lib=$(EXPAT_OUTDIR) \
+		$(EXPAT_FLAGS) \
 		$(strip $(CONFIGURE_FLAGS))
 
 else

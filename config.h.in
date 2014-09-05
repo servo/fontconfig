@@ -238,9 +238,6 @@
 /* Use xmlparse.h instead of expat.h */
 #undef HAVE_XMLPARSE_H
 
-/* Define to 1 if you have the `XML_SetDoctypeDeclHandler' function. */
-#undef HAVE_XML_SETDOCTYPEDECLHANDLER
-
 /* Define to 1 if you have the `_mktemp_s' function. */
 #undef HAVE__MKTEMP_S
 
