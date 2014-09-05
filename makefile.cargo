@@ -15,7 +15,10 @@ else
 CC ?= gcc
 AR ?= ar
 
-CONFIGURE_FLAGS ?=
+CONFIGURE_FLAGS := \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    $(NULL)
 
 endif
 
