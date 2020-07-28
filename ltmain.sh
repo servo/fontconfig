@@ -3170,10 +3170,10 @@ func_mode_install ()
 	  fi
 	fi
 
-	# remove .exe since cygwin /usr/bin/install will append another
+	# remove .exe since cygwin /usr/bin/env install will append another
 	# one anyway
 	case $install_prog,$host in
-	*/usr/bin/install*,*cygwin*)
+	*/usr/bin/env install*,*cygwin*)
 	  case $file:$destfile in
 	  *.exe:*.exe)
 	    # this is ok
@@ -6811,7 +6811,7 @@ func_mode_link ()
 		  *-*-darwin* )
 		    # if the lib is a (non-dlopened) module then we can not
 		    # link against it, someone is ignoring the earlier warnings
-		    if /usr/bin/file -L $add 2> /dev/null |
+		    if /usr/bin/env file -L $add 2> /dev/null |
 			 $GREP ": [^:]* bundle" >/dev/null ; then
 		      if test "X$dlopenmodule" != "X$lib"; then
 			$ECHO "*** Warning: lib $linklib is a module, not a shared library"
